@@ -5,7 +5,6 @@ class Rover
 		@y = y
 		@direction = direction
 	end
-
 	def read_instructions(instructions)
 		instructions.each_char do |instruction|
 			if instruction == "M"
@@ -16,7 +15,6 @@ class Rover
 		    end
 		end
 	end
-
 	def move
 		case @direction
 		when "N"
@@ -28,9 +26,7 @@ class Rover
 		when "W"
 			then @x -=1			
 		end  
-
 	end
-
 	def rotate(turn)
 	
 		if ((@direction == "N") && (turn == "L")) || ((@direction == "S") && (turn == "R"))
@@ -50,3 +46,17 @@ class Rover
 		"My new location is #{@x}, #{@y}, #{@direction}"
 	end
 end
+puts "What is you plateau size (length and width)"
+rover_one = gets.chomp
+rover1=Rover.new
+puts "Please input move instruction L or R to turn the rover and M to move the rover.
+For example, RMMLMRM"
+intial=gets.chomp.upcase
+rover1.read_instructions(intial)
+puts rover1
+rover2=Rover.new
+puts "Please input move instuctions L or R to turn the rover and M to move the rover.
+For example, RMMLMRM"
+intial=gets.chomp.upcase
+rover2.read_instructions(intial)
+puts rover2
